@@ -1,15 +1,19 @@
 <template>
-  <div>
-    <VueSlickCarousel v-if="companies.length" v-bind="slickSettings">
-      <div v-for="company in companies" :key="company.id">
+  <section>
+    <div class="separator title is-4 has-text-weight-bold">Apoyan el XVII Foro Metropolitano</div>
+    <div class="columns is-centered is-vcentered">
+      <div class="column is-2" v-for="company in companies" :key="company.id">
         <div class="slide-image-normalize">
           <a :href="company.link">
             <img :src="$strapiAsset(company.logo.url)" class="image" alt="">
           </a>
         </div>
+
       </div>
-    </VueSlickCarousel>
-  </div>
+    </div>
+  
+    <div class="line-separator"></div>
+  </section>
 </template>
 
 <script>
@@ -21,35 +25,6 @@ export default {
   data () {
     return {
       companies: [],
-      slickSettings: {
-        dots: true,
-        autoplay: true,
-        infinite: true,
-        arrows: true,
-        speed: 500,
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 4
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 2
-            }
-          }
-        ]
-      }
     }
   },
   fetchOnServer: false
@@ -59,11 +34,11 @@ export default {
 <style lang="scss" scoped>
 .slide-image-normalize {
   height: 130px;
-  margin: 10px;
+  //margin: 10px;
   position: relative;
   img{
-    max-height: 60%;
-    max-width: 75%;
+    max-height: 50%;
+    max-width: 80%;
     position: absolute;
     top: 50%;
     left: 50%;

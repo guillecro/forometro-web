@@ -1,7 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'stream-fundacion-metropolitana',
+    title: '17° Foro Metropolitano - Edición 2020 - 1 al 4 de Diciembre 2020',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -52,7 +52,7 @@ export default {
   },
 
   strapi: {
-    entities: ['homepage', 'acompanamientos','eventos'],
+    entities: ['homepage', 'acompanamientos', 'eventos'],
     url: process.env.STRAPI_URL || 'http://localhost:1337'
   },
 

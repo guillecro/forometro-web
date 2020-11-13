@@ -7,5 +7,8 @@ export default ({ app, $config }, inject) => {
     }
     return `${date.getHours()}:${date.getMinutes()} Hs`
   })
-  // inject('', )=
+  inject('auxSortDates', (array,param) => {
+    return array.sort((a, b) => (new Date(b[param]) + new Date(a[param]))) 
+    //return array.sortBy(function (o) { return new Date(o[param]) });
+  } )
 }

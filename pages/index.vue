@@ -1,11 +1,11 @@
 
 <template>
-  <section class="section">
+  <section>
+    <HeaderHome />
+    <MainStage v-if="homepage.youtubeId" :youtube-id="homepage.youtubeId" />
     <div class="container">
-      <Navbar/>
-      <br>
-      <img :src="$strapiAsset(homepage.coverPrincipal.url)" class="image is-fullwidth" alt="">
-      <br>
+      <!-- <img :src="$strapiAsset(homepage.coverPrincipal.url)" class="image is-fullwidth" alt=""> -->
+      <!-- <br> -->
       <a href="#"><img src="~/assets/register.svg" class="image is-fullwidth" alt=""></a>
       <br>
       <div class="who-container is-clearfix">
@@ -20,13 +20,9 @@
         <br>
         <div v-html="$md.render(homepage.acercaDe)" />
       </div>
-
-      <h1 class="title is-2">
-        Acompañan
-      </h1>
-      <Acompanamiento />
-      <MainStage :youtube-id="homepage.youtubeId" v-if="homepage.youtubeId" />
+      <!--<Acompanamiento />-->
       <Agenda />
+      <Apoyo />
     </div>
   </section>
 </template>
@@ -58,7 +54,8 @@ export default {
     background-position: center center;
     margin:5px 0 10px;
   .who-right{
-    height: 60px;
+    height: 65px;
+    margin-right: -2px;
   }
 }
 </style>

@@ -1,11 +1,17 @@
 <template>
   <section>
+    <Navbar />
     <Nuxt />
+    <TheFooter />
   </section>
 </template>
 
 <script>
+import TheFooter from '~/components/TheFooter.vue'
 export default {
+  components: {
+    TheFooter
+  },
   data () {
     return {
       items: [

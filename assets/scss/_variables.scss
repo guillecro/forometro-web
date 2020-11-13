@@ -3,6 +3,7 @@
 $primary : #c42330;
 $body-size: 14px;
 // $secondary : #371575;
+$family-primary: 'IBM Plex Sans', $family-sans-serif;
 $primary-invert: findColorInvert($primary);
 $colors: (
     "white": ($white, $black),
@@ -15,3 +16,4 @@ $colors: (
     "warning": ($warning, $warning-invert),
     "danger": ($danger, $danger-invert),
 );
+

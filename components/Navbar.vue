@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar :fixed-top="true" :shadow="true" wrapper-class="container">
+    <b-navbar :fixed-top="true" :shadow="true" wrapper-class="container" type="is-white">
       <template slot="brand">
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <img
@@ -11,10 +11,10 @@
       </template>
       <template slot="start">
         <b-navbar-item href="#">
-          En vivo&nbsp;<i class="fas fa-circle has-text-primary" />
+          Evento&nbsp;<i class="fas fa-circle has-text-primary" />
         </b-navbar-item>
         <b-navbar-item href="#">
-          Inicio
+          Agenda&nbsp;<i class="fas fa-calendar-alt fa-fw" />
         </b-navbar-item>
         <b-navbar-item href="#">
           Stands
@@ -53,7 +53,7 @@
         </p>
       </div>
     </nav> -->
-    <div class="line-top" />
+    <!-- <div class="line-top" />
     <br>
     <div class="columns is-vcentered">
       <div class="column">
@@ -64,7 +64,7 @@
       </div>
     </div>
     <br>
-    <div class="line-bottom" />
+    <div class="line-bottom" /> -->
   </div>
 </template>
 

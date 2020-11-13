@@ -1,15 +1,29 @@
 <template>
-  <div class="columns is-centered">
-    <div class="column is-9">
-      <div class="videoWrapper">
-        <iframe
-          width="560"
-          height="315"
-          :src="`https://www.youtube.com/embed/${youtubeId}`"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        />
+  <div class="hero is-primary is-bold my-5">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-3 has-text-weight-bold">
+          El evento en VIVO
+        </h1>
+        <div class="tile is-ancestor" v-show="false">
+          <div class="tile is-parent">
+            <div class="tile is-child">
+              <div class="videoWrapper">
+                <iframe
+                  width="853"
+                  height="480"
+                  :src="`https://www.youtube.com/embed/${youtubeId}`"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                />
+              </div>
+            </div>
+            <div class="tile is-child is-4 slido-container">
+              <iframe src="https://app.sli.do/event/cvhhfoqj" height="100%" width="100%" frameBorder="0" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -38,5 +52,11 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.slido-container{
+  height: 100%;
+  @media print,screen and (max-width:769px) {
+              height:500px;
+  }
 }
 </style>
