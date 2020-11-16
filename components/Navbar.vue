@@ -24,7 +24,7 @@
       <template slot="end">
         <b-navbar-item tag="div">
           <div class="buttons">
-            <a class="button is-primary">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeO-qbrV-mi1QHlY788LqlfLtOZwa1SdzdzwXRO02B5H6aTXw/viewform" target="_blank" class="button is-primary">
               <strong>INSCRIBITE</strong>
             </a>
           </div>

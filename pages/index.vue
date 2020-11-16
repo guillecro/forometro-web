@@ -6,7 +6,7 @@
     <div class="container">
       <!-- <img :src="$strapiAsset(homepage.coverPrincipal.url)" class="image is-fullwidth" alt=""> -->
       <!-- <br> -->
-      <a href="#"><img src="~/assets/register.svg" class="image is-fullwidth" alt=""></a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeO-qbrV-mi1QHlY788LqlfLtOZwa1SdzdzwXRO02B5H6aTXw/viewform" target="_blank"><img src="~/assets/register.svg" class="image is-fullwidth" alt=""></a>
       <br>
       <div class="who-container is-clearfix">
         <img src="~/assets/who-right.svg" class="image who-right is-pulled-right" alt="">
