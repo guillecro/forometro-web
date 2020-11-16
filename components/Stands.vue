@@ -23,10 +23,10 @@
                             <h5 class="title is-2 has-text-centered has-text-primary has-text-weight-bold">{{stand.nombre}}</h5>
                             <br>
                             <div class="columns is-centered is-multiline is-mobile">
-                                <div class="column is-4-mobile is-2-desktop" v-for="video in stand.videos" :key="`stand-${stand.id}-video-${video.id}`">
+                                <div class="column is-4-mobile is-3-tablet is-2-desktop" v-for="video in stand.videos" :key="`stand-${stand.id}-video-${video.id}`">
                                     <a :href="video.url" target="_click">
                                         <img :src="`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`" class="image is-fullwidth" alt="">
-                                        <h6 class="title is-5 has-text-weight-bold has-text-primary has-text-left my-5">{{video.titulo}}</h6>
+                                        <h6 class="title is-6 has-text-weight-bold has-text-primary has-text-left my-5">{{video.titulo}}</h6>
                                     </a>
                                 </div>
                             </div>
