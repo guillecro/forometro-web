@@ -52,7 +52,7 @@ export default {
   },
 
   strapi: {
-    entities: ['homepage', 'acompanamientos', 'eventos'],
+    entities: ['homepage', 'acompanamientos', 'eventos', 'stands'],
     url: process.env.STRAPI_URL || 'http://localhost:1337'
   },
 

@@ -3,6 +3,10 @@ h1,h2,h3,h4,h5,h6,.title,.subtitle{
   font-family: 'Exo 2', serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .image.is-centered{
   margin: 0 auto;
 }
@@ -33,4 +37,9 @@ h1,h2,h3,h4,h5,h6,.title,.subtitle{
     display: inline-block;
     vertical-align: middle;
     float:none;
+}
+
+.line-separator{
+  margin: 20px 0;
+      border-bottom: 4px solid #c42330;
 }

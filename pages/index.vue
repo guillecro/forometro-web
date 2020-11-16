@@ -12,16 +12,22 @@
         <img src="~/assets/who-right.svg" class="image who-right is-pulled-right" alt="">
         <div class="who-left" />
       </div>
-      <div class="content">
-        <h1 class="title is-2">
-          Bienvenida
+        <h1 class="title is-2 has-text-primary has-text-weight-bold has-text-centered my-6">
+          ACERCA DEL FORO
         </h1>
+      <div class="content">
         <div v-html="$md.render(homepage.introduccion)" />
         <br>
         <div v-html="$md.render(homepage.acercaDe)" />
       </div>
       <!--<Acompanamiento />-->
       <Agenda />
+    <div class="line-separator mt-6"></div>
+    </div>
+    <div class="mb-6">
+    <Stands />
+    </div>
+    <div class="container my-6">
       <Apoyo />
     </div>
   </section>

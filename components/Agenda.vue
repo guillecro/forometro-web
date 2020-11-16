@@ -1,4 +1,6 @@
 <template>
+<div id="agenda">
+<h1 class="title is-1 has-text-weight-bold my-6 has-text-primary has-text-centered">AGENDA</h1>
   <div v-if="$fetchState.pending">
     <h4 class="subtitle has-text-primary is-4 has-text-centered">
       <i class="fas fa-sync fa-spin" />&nbsp; Cargando agenda
@@ -11,10 +13,10 @@
       </h4>
     </div>
     <div v-else>
-      <b-tabs v-model="selectedTab" type="is-boxed" size="is-large">
+      <b-tabs v-model="selectedTab" type="is-boxed" size="is-large" position="is-centered">
         <b-tab-item v-for="(day,i) in dayList" :key="`day${i}`" :value="day.date" >
           <template #header>
-            {{day.label.toUpperCase()}}
+            <span class="has-text-weight-medium has-text-primary">{{day.label.toUpperCase()}}</span>
           </template>
         </b-tab-item>
       </b-tabs>
@@ -28,7 +30,7 @@
           <h5 class="title is-3 has-text-primary">
             {{ evento.titulo }}
           </h5>
-          <div class="content" v-html="$md.render(evento.acerca)" />
+          <div class="content" v-if="evento.acerca != null" v-html="$md.render(evento.acerca)" />
         </div>
         <div class="media-left">
           <a v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}`" @click="openModalParticipante">
@@ -40,6 +42,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -68,7 +71,8 @@ export default {
       console.log(new Date(date))
       return {
         date,
-        label: format(new Date(`${date}T17:00:00.000Z`), "EEE, d 'de' LLLL", {locale: es}),
+        //label: format(new Date(`${date}T17:00:00.000Z`), "EEE, d 'de' LLLL", {locale: es}),
+        label: format(new Date(`${date}T17:00:00.000Z`), "EEEE, d/MM", {locale: es}),
         agenda: groups[date]
       };
     });
@@ -76,7 +80,7 @@ export default {
     this.eventos = groupArrays
     this.selectedTab = groupArrays[0].date
     console.log(groupArrays)
-    this.$store.commit('agenda/save', eventosList)
+    this.$store.commit('calendar/save', eventosList)
   },
   data () {
     return {

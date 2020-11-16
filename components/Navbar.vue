@@ -10,13 +10,13 @@
         </b-navbar-item>
       </template>
       <template slot="start">
-        <b-navbar-item href="#">
-          Evento&nbsp;<i class="fas fa-circle has-text-primary" />
+        <b-navbar-item href="#evento">
+          Evento&nbsp;<i class="fas fa-circle has-text-primary animate__animated animate__flash animate__infinite animate__slow" />
         </b-navbar-item>
-        <b-navbar-item href="#">
+        <b-navbar-item href="#agenda">
           Agenda&nbsp;<i class="fas fa-calendar-alt fa-fw" />
         </b-navbar-item>
-        <b-navbar-item href="#">
+        <b-navbar-item href="#stands">
           Stands
         </b-navbar-item>
       </template>
