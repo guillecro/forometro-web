@@ -31,11 +31,17 @@
             {{ evento.titulo }}
           </h5>
           <div class="content" v-if="evento.acerca != null" v-html="$md.render(evento.acerca)" />
+          <div v-if="evento.participantes.length > 0">
+
+          <h1 class="title is-6 mb-2"><u>Participan:</u></h1>
+          <p v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}-name`"><b>{{participante.nombre}}</b> <span v-if="participante.titulo">(<i>{{participante.titulo}}</i>)</span></p>
+          </div>
         </div>
-        <div class="media-left">
+        <div class="media-left limit-width has-text-right" >
           <a v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}`" @click="openModalParticipante">
-            <b-tooltip :label="`${participante.nombre} ${participante.apellido}`">
-              <img :src="$strapiAsset(participante.foto.url)" class="image participante-logo is-inline-block mx-2" alt="">
+            <b-tooltip :label="`${participante.nombre}`">
+              <img :src="$strapiAsset(participante.foto.url)" v-if="participante.foto" class="image participante-logo is-inline-block mx-2" loading="lazy" alt="">
+              <img src="~/assets/generic-avatar.png" v-else class="image participante-logo is-inline-block mx-2" loading="lazy" alt="">
             </b-tooltip>
           </a>
         </div>
@@ -111,8 +117,21 @@ export default {
 
 <style lang="scss" scoped>
 .participante-logo{
-  width:40px;
+  width:50px;
   border-radius: 40px;
-  border: 2px solid rgb(128, 128, 128);
+  border: 1px solid rgb(128, 128, 128);
+}
+.limit-width{
+  max-width: 200px;
+}
+.media{
+  @media print,screen and (max-width:769px) {
+    flex-direction: column;
+    .limit-width{
+      max-width: none;
+      margin-top: 25px;
+    }
+  }
+  flex-direction: row;
 }
 </style>
