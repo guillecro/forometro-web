@@ -57,7 +57,7 @@ export default {
   },
   mounted: function () {
     this.intervalId = setInterval(this.updateTime, 30000);
-    //  this.intervalId = setInterval(this.updateTime, 200);
+    //  this.intervalId = setInterval(this.updateTime, 300);
   },
   beforeDestroy() {
     if (this.intervalId) clearInterval(this.intervalId);

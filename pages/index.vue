@@ -27,12 +27,13 @@
       <Agenda />
       </div>
     </div>
-    <div class="container">
-    <div class="line-separator mt-6"></div>
-    <div class="mb-6">
+    <!-- <div class="line-separator mt-6"></div> -->
+    <!-- <div class="mb-6"> -->
+    <!-- </div> -->
     <Stands />
+    <Galeria />
+    <div class="container">
       <Apoyo />
-    </div>
     </div>
   </section>
 </template>

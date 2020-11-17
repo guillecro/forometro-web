@@ -56,7 +56,7 @@ export default {
   },
 
   strapi: {
-    entities: ['homepage', 'acompanamientos', 'eventos', 'stands'],
+    entities: ['homepage', 'acompanamientos', 'eventos', 'stands','galeria'],
     url: process.env.STRAPI_URL || 'http://localhost:1337'
   },
 
