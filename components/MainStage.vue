@@ -28,7 +28,10 @@
         <coming-next :now="now" />
       </div>
     </div>
-    <vue-particles color="FFFFFF" :hoverEffect="false" :clickEffect="false"></vue-particles>
+    <!-- https://github.com/creotip/vue-particles/issues/10 -->
+    <no-ssr>
+      <vue-particles color="FFFFFF" :hoverEffect="false" :clickEffect="false"></vue-particles>
+    </no-ssr>
   </div>
 </template>
 

@@ -23,7 +23,7 @@ export default {
   plugins: [
     // {src: '~/plugins/vue-slick-carousel.js'}
     { src: '~/plugins/vue-slick-carousel.js', mode: 'client' },
-    { src: '~/plugins/vue-particles', mode: 'client' },
+    { src: '~/plugins/vue-particles.js', mode: 'client' },
     { src: '~/plugins/services.js' }
   ],
 
