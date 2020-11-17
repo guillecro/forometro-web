@@ -43,3 +43,7 @@ html {
   margin: 20px 0;
       border-bottom: 4px solid #c42330;
 }
+
+.slick-prev::before, .slick-next::before{
+  color: $primary !important;
+}

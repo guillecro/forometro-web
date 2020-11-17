@@ -26,12 +26,16 @@
       <!--<Acompanamiento />-->
       <Agenda />
       </div>
-    <div class="container">
-    <div class="line-separator mt-6"></div>
-    <div class="mb-6">
-    <Stands />
-      <Apoyo />
     </div>
+    <!-- <div class="line-separator mt-6"></div> -->
+    <!-- <div class="mb-6"> -->
+    <!-- </div> -->
+    <Stands />
+    <Galeria />
+    <div class="section">
+
+    <div class="container">
+      <Apoyo />
     </div>
     </div>
   </section>

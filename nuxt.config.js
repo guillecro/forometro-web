@@ -33,7 +33,8 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -55,7 +56,7 @@ export default {
   },
 
   strapi: {
-    entities: ['homepage', 'acompanamientos', 'eventos', 'stands'],
+    entities: ['homepage', 'acompanamientos', 'eventos', 'stands','galeria'],
     url: process.env.STRAPI_URL || 'http://localhost:1337'
   },
 
@@ -63,9 +64,8 @@ export default {
     injected: true
   },
 
-  // https://github.com/nuxt-community/gtm-module
-  gtm: {
-    id: 'GTM-XXXXXXX'
+  googleAnalytics: {
+    id: 'UA-183289065-1', // Use as fallback if no runtime config is provided
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
