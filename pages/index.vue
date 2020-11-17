@@ -26,12 +26,12 @@
       <!--<Acompanamiento />-->
       <Agenda />
       </div>
-    </div>
     <div class="container">
     <div class="line-separator mt-6"></div>
     <div class="mb-6">
     <Stands />
       <Apoyo />
+    </div>
     </div>
     </div>
   </section>

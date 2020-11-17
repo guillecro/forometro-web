@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="columns is-centered is-vcentered is-multiline is-mobile">
-      <div class="column is-2-tablet is-1-desktop" v-for="company in companiesLower" :key="company.id">
+      <div class="column is-2-mobile is-2-tablet is-1-desktop" v-for="company in companiesLower" :key="company.id">
         <div class="image-container-lower">
           <a :href="company.link">
             <img :src="$strapiAsset(company.logo.url)" class="image" :alt="company.nombre" loading="lazy">
@@ -62,7 +62,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 50;
+    z-index: 20;
   }
 }
 .image-container-lower {
@@ -76,7 +76,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 50;
+    z-index: 20;
   }
 }
 .separator {
