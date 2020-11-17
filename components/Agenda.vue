@@ -74,7 +74,6 @@ export default {
 
     // Edit: to add it in the array format instead
     const groupArrays = Object.keys(groups).map((date) => {
-      console.log(new Date(date))
       return {
         date,
         //label: format(new Date(`${date}T17:00:00.000Z`), "EEE, d 'de' LLLL", {locale: es}),
@@ -85,7 +84,6 @@ export default {
 
     this.eventos = groupArrays
     this.selectedTab = groupArrays[0].date
-    console.log(groupArrays)
     this.$store.commit('calendar/save', eventosList)
   },
   data () {

@@ -28,6 +28,7 @@
         <coming-next :now="now" />
       </div>
     </div>
+    <vue-particles color="FFFFFF" :hoverEffect="false" :clickEffect="false"></vue-particles>
   </div>
 </template>
 
@@ -108,6 +109,21 @@ export default {
   height: 100%;
   @media print,screen and (max-width:769px) {
               height:500px;
+  }
+}
+#particles-js {
+  // background-size: cover;
+  position: absolute;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero{
+  position: relative;
+  .hero-body{
+    z-index: 10;
+    background: linear-gradient(to bottom, #4a4a4b2f, #1d0f0b5d);
   }
 }
 </style>

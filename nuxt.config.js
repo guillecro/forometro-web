@@ -22,7 +22,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     // {src: '~/plugins/vue-slick-carousel.js'}
-    { src: '~/plugins/vue-slick-carousel.js' },
+    { src: '~/plugins/vue-slick-carousel.js', mode: 'client' },
+    { src: '~/plugins/vue-particles', mode: 'client' },
     { src: '~/plugins/services.js' }
   ],
 
@@ -60,6 +61,11 @@ export default {
 
   markdownit: {
     injected: true
+  },
+
+  // https://github.com/nuxt-community/gtm-module
+  gtm: {
+    id: 'GTM-XXXXXXX'
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/gtm": "^2.4.0",
     "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/strapi": "^0.1.7",
     "animate.css": "^4.1.1",
@@ -19,6 +20,7 @@
     "date-fns": "^2.16.1",
     "nuxt": "^2.14.6",
     "nuxt-buefy": "^0.4.3",
+    "vue-particles": "^1.0.9",
     "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {

@@ -18,6 +18,7 @@ export default {
     const companies = await this.$strapi.$acompanamientos.find()
     this.companies = companies
   },
+  fetchOnServer: false
   data () {
     return {
       companies: [],
@@ -52,7 +53,6 @@ export default {
       }
     }
   },
-  fetchOnServer: false
 }
 </script>
 
