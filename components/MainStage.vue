@@ -52,7 +52,7 @@ export default {
       starts: new Date(Date.UTC(2020, 11, 1, 13, 0, 0)),
       ends: new Date(Date.UTC(2020, 11, 5, 1, 0, 0)),
       intervalId: null,
-      debug: true,
+      debug: false,
     }
   },
   components: {
