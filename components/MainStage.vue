@@ -47,8 +47,8 @@ export default {
   },
   data(){
     return {
-      // now: new Date(),
-      now: new Date(Date.UTC(2020,10,30,20,0,0)),
+      now: new Date(),
+      // now: new Date(Date.UTC(2020,10,30,20,0,0)),
       starts: new Date(Date.UTC(2020, 11, 1, 13, 0, 0)),
       ends: new Date(Date.UTC(2020, 11, 5, 1, 0, 0)),
       intervalId: null,
@@ -59,18 +59,18 @@ export default {
     ComingNext,
   },
   mounted: function () {
-    // this.intervalId = setInterval(this.updateTime, 30000);
-     this.intervalId = setInterval(this.updateTime, 300);
+    this.intervalId = setInterval(this.updateTime, 30000);
+    //  this.intervalId = setInterval(this.updateTime, 300);
   },
   beforeDestroy() {
     if (this.intervalId) clearInterval(this.intervalId);
   },
   methods: {
     updateTime: function () {
-      // this.now = new Date();
-      this.now = this.addMinutes(Math.floor(Math.random() * 10) + 5)
-      this.now = this.addSeconds(Math.floor(Math.random() * 30) + 10)
-      this.now = this.addSeconds(1800)
+      this.now = new Date();
+      // this.now = this.addMinutes(Math.floor(Math.random() * 10) + 5)
+      // this.now = this.addSeconds(Math.floor(Math.random() * 30) + 10)
+      // this.now = this.addSeconds(1800)
     },
     addMinutes(minutes) {
       return new Date(this.now.getTime() + minutes * 60000);

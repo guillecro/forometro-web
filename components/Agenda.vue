@@ -141,8 +141,8 @@ export default {
   background-size: cover;
     /* center the image vertically and horizontally */
   background-position: top center;
-  &.with-avatar{
-  }
+  // &.with-avatar{
+  // }
   &.is-moderator{
     border: 3px solid #c42330;
   }
