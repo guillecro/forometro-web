@@ -19,6 +19,15 @@
         <b-navbar-item href="#stands">
           Stands
         </b-navbar-item>
+        <b-navbar-item href="#galerias">
+          Galeria
+        </b-navbar-item>
+        <b-navbar-item href="#apoyos">
+          Apoyo
+        </b-navbar-item>
+        <b-navbar-item href="#socios">
+          Socios
+        </b-navbar-item>
       </template>
 
       <template slot="end">

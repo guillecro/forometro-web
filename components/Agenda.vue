@@ -13,12 +13,14 @@
       </h4>
     </div>
     <div v-else>
-      <b-tabs v-model="selectedTab" type="is-boxed" size="is-large" position="is-centered">
-        <b-tab-item v-for="(day,i) in dayList" :key="`day${i}`" :value="day.date" >
-          <template #header>
-            <span class="has-text-weight-medium has-text-primary">{{day.label.toUpperCase()}}</span>
-          </template>
-        </b-tab-item>
+      <b-tabs v-model="selectedTab" type="is-boxed" size="is-large" position="is-centered"  :multiline="true">
+        <template v-for="(day,i) in daysList">
+          <b-tab-item
+              :key="`dat${i}`"
+              :value="day.date"
+              :label="day.label.toUpperCase()">
+          </b-tab-item>
+        </template>
       </b-tabs>
       <div v-for="evento in eventosList" :key="`evento-${evento.id}`" class="media">
         <div class="media-left">
@@ -32,16 +34,26 @@
           </h5>
           <div class="content" v-if="evento.acerca != null" v-html="$md.render(evento.acerca)" />
           <div v-if="evento.participantes.length > 0">
-
           <h1 class="title is-6 mb-2"><u>Participan:</u></h1>
           <p v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}-name`"><b>{{participante.nombre}}</b> <span v-if="participante.titulo">(<i>{{participante.titulo}}</i>)</span></p>
+          <h1 v-if="evento.moderador" class="title is-6 mb-2 mt-4"><u>Modera:</u></h1>
+          <p v-if="evento.moderador"><b>{{evento.moderador.nombre}}</b> <span v-if="evento.moderador.titulo">(<i>{{evento.moderador.titulo}}</i>)</span></p>
           </div>
         </div>
-        <div class="media-left limit-width has-text-right" >
-          <a v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}`" @click="openModalParticipante">
+        <div class="media-left limit-width has-text-right-tablet has-text-left-mobile" >
+          <a v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}`" @click="openModalParticipante(participante)">
             <b-tooltip :label="`${participante.nombre}`">
-              <img :src="$strapiAsset(participante.foto.url)" v-if="participante.foto" class="image participante-logo is-inline-block mx-2" loading="lazy" alt="">
-              <img src="~/assets/generic-avatar.png" v-else class="image participante-logo is-inline-block mx-2" loading="lazy" alt="">
+              <div class="participante-logo-two with-avatar mx-2 mb-2 is-inline-block" v-if="participante.foto" :style="`background-image: url(${$strapiAsset(participante.foto.url)})`"></div>
+              <div class="participante-logo-two no-avatar mx-2 mb-2 is-inline-block" v-else></div>
+            </b-tooltip>
+          </a>
+          <a v-if="evento.moderador" @click="openModalParticipante(evento.moderador)">
+            <b-tooltip multilined>
+              <template v-slot:content>
+                <u><b>Modera</b></u><br>{{evento.moderador.nombre}}
+            </template>
+              <div class="participante-logo-two with-avatar is-moderator mx-2 mb-2 is-inline-block" v-if="evento.moderador.foto" :style="`background-image: url(${$strapiAsset(evento.moderador.foto.url)})`"></div>
+              <div class="participante-logo-two no-avatar mx-2 mb-2 is-inline-block" v-else></div>
             </b-tooltip>
           </a>
         </div>
@@ -54,7 +66,7 @@
 <script>
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
-
+import PersonModal from './PersonModal'
 export default {
   fetchOnServer: false,
   async fetch () {
@@ -83,25 +95,30 @@ export default {
     });
 
     this.eventos = groupArrays
+    this.daysList = groupArrays.map( g => { return {date: g.date, label: g.label} })
     this.selectedTab = groupArrays[0].date
     this.$store.commit('calendar/save', eventosList)
   },
   data () {
     return {
       eventos: [],
+      daysList: [],
       selectedTab: null
     }
   },
   methods: {
-    openModalParticipante () {
-
+    openModalParticipante (person) {
+      this.$buefy.modal.open({
+        parent: this,
+        component: PersonModal,
+        hasModalCard: true,
+        props: {
+          person: person
+        },
+      })
     }
   },
   computed: {
-    dayList: function(){
-      if(this.eventos.length == 0) return []
-      return this.eventos.map( g => { return {date: g.date, label: g.label} })
-    },
     eventosList: function(){
       if(!this.selectedTab) return []
       if(this.eventos.length == 0) return []
@@ -114,19 +131,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.participante-logo{
-  width:50px;
-  border-radius: 40px;
-  border: 1px solid rgb(128, 128, 128);
+.participante-logo-two{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  // border: 1px solid #;
+  box-shadow: 1px 1px 4px 0px rgba(0,0,0,.2);
+     /* fill the container, preserving aspect ratio, and cropping to fit */
+  background-size: cover;
+    /* center the image vertically and horizontally */
+  background-position: top center;
+  &.with-avatar{
+  }
+  &.is-moderator{
+    border: 3px solid #c42330;
+  }
+  &.no-avatar{
+    background-image: url('~assets/generic-avatar.png')
+  }
 }
 .limit-width{
-  max-width: 200px;
+  width: 40%;
+  min-width: 200px;
+  max-width: 300px;
 }
 .media{
   @media print,screen and (max-width:769px) {
     flex-direction: column;
     .limit-width{
       max-width: none;
+      min-width: none;
+      width: 100%;
       margin-top: 25px;
     }
   }

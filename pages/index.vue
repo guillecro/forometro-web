@@ -15,14 +15,18 @@
     </div>
     <div class="section">
       <div class="container">
-          <h1 class="title is-2 has-text-primary has-text-weight-bold has-text-centered my-6">
+          <h1 class="title is-1 has-text-primary has-text-weight-bold has-text-centered my-6">
           ACERCA DEL FORO
         </h1>
-      <div class="content">
-        <div v-html="$md.render(homepage.introduccion)" />
-        <br>
-        <div v-html="$md.render(homepage.acercaDe)" />
-      </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-9">
+            <div class="content is-medium">
+              <div v-html="$md.render(homepage.introduccion)" />
+              <br>
+              <div v-html="$md.render(homepage.acercaDe)" />
+            </div>
+          </div>
+        </div>
       <!--<Acompanamiento />-->
       <Agenda />
       </div>
@@ -36,6 +40,7 @@
 
     <div class="container">
       <Apoyo />
+      <Socios />
     </div>
     </div>
   </section>

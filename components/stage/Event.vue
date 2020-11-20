@@ -11,6 +11,8 @@
             <h1 class="title is-3 has-text-weight-bold">{{event.titulo}}</h1>
             <h6 class="subtitle is-5" v-if="event.participantes.length > 0">Participan:</h6>
             <p v-for="participante in event.participantes" :key="`event-${event.id}-part-${participante.id}`"><b>{{participante.nombre}}</b> (<i>{{participante.titulo}}</i>)</p>
+            <h6 class="subtitle is-5 mt-5 mb-1" v-if="event.moderador">Modera:</h6>
+            <p v-if="event.moderador"><b>{{event.moderador.nombre}}</b> (<i>{{event.moderador.titulo}}</i>)</p>
           </div>
       </div>
   </div>
