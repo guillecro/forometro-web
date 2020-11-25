@@ -5,7 +5,7 @@
       <div class="content has-text-centered">
         <b>Fundación Metropolitana</b>
         <p>54-11-6091 – 7550 / 7551</p>
-        <p>Bartolomé Mitre 811 piso 2</p>
+        <p><a href="mailto:info@metropoitano.org.ar" class="has-text-dark">info@metropoitano.org.ar</a></p>
         <p>(C1036AAO) Ciudad de Buenos Aires</p>
       </div>
     </div>

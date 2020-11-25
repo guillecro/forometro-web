@@ -5,7 +5,8 @@
                 <div class="hero-body">
                   <div class="section">
                     <div class="container">
-                      <h1 class="title is-1 has-text-weight-bold has-text-primary">GALERIA DE EXPERIENCIAS</h1>
+                      <h1 class="title is-1 has-text-weight-bold has-text-primary has-text-centered">GALERIA DE EXPERIENCIAS</h1>
+                      <br>
     <div v-if="$fetchState.pending">
         <h4 class="subtitle has-text-primary is-4 has-text-centered">
         <i class="fas fa-sync fa-spin" />&nbsp; Cargando galeria

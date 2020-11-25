@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .image-container-upper {
-  height: 150px;
+  height: 160px;
   //margin: 10px;
   position: relative;
   img{

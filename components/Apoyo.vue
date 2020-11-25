@@ -2,7 +2,7 @@
   <section id="apoyos">
     <div class="separator title is-4 has-text-weight-bold">Apoyan el XVII Foro Metropolitano</div>
     <div class="columns is-centered is-vcentered is-multiline is-mobile">
-      <div class="column is-6-mobile is-6-tablet is-2-desktop" v-for="company in companiesUpper" :key="company.id">
+      <div class="column is-6-mobile is-6-tablet is-3-desktop" v-for="company in companiesUpper" :key="company.id">
         <div class="image-container-upper">
           <a :href="company.link">
             <img :src="$strapiAsset(company.logo.url)" class="image" :alt="company.nombre" loading="lazy">
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="columns is-centered is-vcentered is-multiline is-mobile">
-      <div class="column is-2-mobile is-2-tablet is-1-desktop" v-for="company in companiesLower" :key="company.id">
+      <div class="column is-2-mobile is-2-tablet is-2-desktop" v-for="company in companiesLower" :key="company.id">
         <div class="image-container-lower">
           <a :href="company.link">
             <img :src="$strapiAsset(company.logo.url)" class="image" :alt="company.nombre" loading="lazy">
@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .image-container-upper {
-  height: 130px;
+  height: 150px;
   //margin: 10px;
   position: relative;
   img{
@@ -66,7 +66,7 @@ export default {
   }
 }
 .image-container-lower {
-  height: 130px;
+  height: 100px;
   //margin: 10px;
   position: relative;
   img{

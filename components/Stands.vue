@@ -18,7 +18,7 @@
                         <div v-else>
                             <b-carousel v-if="stands.length" indicator-style="is-lines" icon-pack="fas" icon-size="is-medium" :interval="8000">
                                 <b-carousel-item v-for="(stand, i) in stands" :key="`stand-${i}`">
-                                    <div class="some-stand columns is-vcentered">
+                                    <div class="some-stand columns is-vcentered" v-if="!stand.imagenFull">
                                         <div class="column">
                                             <div class="image-container box">
                                                 <img :src="$strapiAsset(stand.logo.url)" loading="lazy" class="image logo-stand is-centered" :alt="stand.nombre">
@@ -37,6 +37,15 @@
                                                     <a v-if="stand.youtube" :href="stand.youtube" target="_blank" class="has-text-white"><i class="fab fa-youtube fa-lg is-inline-block mr-4 mt-4"></i></a>
                                                     <span v-if="stand.whatsapp" class="is-inline-block mr-4 mt-4"><i class="fab fa-whatsapp fa-lg"></i> <b>{{stand.whatsapp}}</b></span>
                                                 </p>
+                                        </div>
+                                    </div>
+                                    <div v-else>
+                                        <div class="columns is-centered">
+                                            <div class="column is-8">
+                                        <a :href="stand.imagenFull.url" target="_blank">
+                                        <img :src="$strapiAsset(stand.imagenFull.url)" class="image is-centered" alt="">
+                                        </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <br>
