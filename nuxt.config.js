@@ -61,7 +61,9 @@ export default {
   },
 
   markdownit: {
-    injected: true
+    injected: true,
+    linkify: false,
+    html: true,
   },
 
   googleAnalytics: {

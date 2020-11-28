@@ -23,7 +23,7 @@
           Galeria
         </b-navbar-item>
         <b-navbar-item href="#apoyos">
-          Apoyo
+          Apoyos
         </b-navbar-item>
         <b-navbar-item href="#socios">
           Socios

@@ -35,15 +35,16 @@
           <div class="content" v-if="evento.acerca != null" v-html="$md.render(evento.acerca)" />
           <div v-if="evento.participantes.length > 0">
           <h1 class="title is-6 mb-2"><u>Participan:</u></h1>
-          <p v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}-name`"><b>{{participante.nombre}}</b> <span v-if="participante.titulo">(<i>{{participante.titulo}}</i>)</span></p>
+          <!-- <p v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}-name`"><b>{{participante.nombre}}</b> <span v-if="participante.titulo">(<i>{{participante.titulo}}</i>)</span></p> -->
+          <p v-for="orador in evento.oradores" :key="`evento-${evento.id}-orador-${orador.participante.id}-name`"><b>{{orador.participante.nombre}}</b> <span v-if="orador.participante.titulo">(<i>{{orador.participante.titulo}}</i>)</span></p>
           <h1 v-if="evento.moderador" class="title is-6 mb-2 mt-4"><u>Modera:</u></h1>
           <p v-if="evento.moderador"><b>{{evento.moderador.nombre}}</b> <span v-if="evento.moderador.titulo">(<i>{{evento.moderador.titulo}}</i>)</span></p>
           </div>
         </div>
         <div class="media-left limit-width has-text-right-tablet has-text-left-mobile" >
-          <a v-for="participante in evento.participantes" :key="`evento-${evento.id}-participante-${participante.id}`" @click="openModalParticipante(participante)">
-            <b-tooltip :label="`${participante.nombre}`">
-              <div class="participante-logo-two with-avatar mx-2 mb-2 is-inline-block" v-if="participante.foto" :style="`background-image: url(${$strapiAsset(participante.foto.url)})`"></div>
+          <a v-for="orador in evento.oradores" :key="`evento-${evento.id}-orador-${orador.participante.id}`" @click="openModalParticipante(orador.participante)">
+            <b-tooltip :label="`${orador.participante.nombre}`">
+              <div class="participante-logo-two with-avatar mx-2 mb-2 is-inline-block" v-if="orador.participante.foto" :style="`background-image: url(${$strapiAsset(orador.participante.foto.url)})`"></div>
               <div class="participante-logo-two no-avatar mx-2 mb-2 is-inline-block" v-else></div>
             </b-tooltip>
           </a>
