@@ -97,7 +97,7 @@ export default {
 
     this.eventos = groupArrays
     this.daysList = groupArrays.map( g => { return {date: g.date, label: g.label} })
-    this.selectedTab = groupArrays[1].date
+    this.selectedTab = groupArrays[2].date
     this.$store.commit('calendar/save', eventosList)
   },
   data () {

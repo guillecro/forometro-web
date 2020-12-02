@@ -25,7 +25,7 @@
             </div>
           </div>
         </div>
-        <coming-next :now="now" />
+        <coming-next :now="now" v-if="mostrarAhoraProximamente" />
       </div>
     </div>
     <!-- https://github.com/creotip/vue-particles/issues/10 -->
@@ -43,6 +43,10 @@ export default {
     youtubeId: {
       required: true,
       type: String
+    },
+    mostrarAhoraProximamente: {
+      required: true,
+      type: Boolean
     }
   },
   data(){

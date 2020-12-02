@@ -2,7 +2,7 @@
 <template>
   <section>
     <HeaderHome />
-    <MainStage v-if="homepage.youtubeId" :youtube-id="homepage.youtubeId" />
+    <MainStage v-if="homepage.youtubeId" :youtube-id="homepage.youtubeId" :mostrar-ahora-proximamente="homepage.mostrarAhoraProximamente" />
     <div class="container">
       <!-- <img :src="$strapiAsset(homepage.coverPrincipal.url)" class="image is-fullwidth" alt=""> -->
       <!-- <br> -->
